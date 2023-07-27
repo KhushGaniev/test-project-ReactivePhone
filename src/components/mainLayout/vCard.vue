@@ -34,7 +34,7 @@ export default {
 .wrapper {
   display: flex;
   align-items: center;
-  padding: 16px 12px;
+  padding: 16px 14px;
   border-radius: 20px;
   border: 1px solid #f3f3f3;
   background: #fff;
