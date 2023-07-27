@@ -16,14 +16,20 @@
             </router-link>
           </div>
         </div>
+        <vProgresBar />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import vProgresBar from "@/components/mainLayout/vProgresBar.vue";
+
 export default {
   name: "vCardLearnProgress",
+  components: {
+    vProgresBar,
+  },
 };
 </script>
 
@@ -56,6 +62,7 @@ export default {
 }
 .learning {
   display: flex;
+  margin-bottom: 8px;
 }
 .column {
   margin-left: 16px;
