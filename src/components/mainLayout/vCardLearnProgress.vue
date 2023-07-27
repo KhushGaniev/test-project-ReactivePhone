@@ -75,6 +75,6 @@ export default {
   flex-direction: column;
 }
 .arrow {
-  margin-left: 100px;
+  margin-left: 75px;
 }
 </style>

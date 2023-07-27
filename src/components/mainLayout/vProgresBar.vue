@@ -40,7 +40,7 @@ export default {
   line-height: 20px;
 }
 .progress {
-  width: 300px; /* Ширина прогресс-бара */
+  width: 250px; /* Ширина прогресс-бара */
 }
 
 /* Стили для зеленых полосок */
@@ -48,7 +48,7 @@ export default {
   height: 100%;
   background-color: #4caf50; /* Зеленый цвет */
   display: inline-block; /* Отображаем полоски в ряд */
-  width: 37px; /* Ширина каждой полоски */
+  width: 30px; /* Ширина каждой полоски */
   height: 6px; /* Высота каждой полоски */
   border-radius: 5px; /* Закругление углов */
   margin-right: 5px; /* Интервал между полосками */

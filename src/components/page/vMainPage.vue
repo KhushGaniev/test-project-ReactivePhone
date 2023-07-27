@@ -5,6 +5,7 @@
       <vCardLearnProgress />
       <vCardItems />
       <vShapeCard />
+      <vFooter />
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@ import vHeader from "@/components/vHeader.vue";
 import vCardLearnProgress from "@/components/mainLayout/vCardLearnProgress.vue";
 import vCardItems from "@/components/mainLayout/vCardItems.vue";
 import vShapeCard from "@/components/mainLayout/vShapeCard.vue";
+import vFooter from "@/components/vFooter.vue";
 
 export default {
   name: "vMain",
@@ -22,6 +24,7 @@ export default {
     vCardLearnProgress,
     vCardItems,
     vShapeCard,
+    vFooter,
   },
 };
 </script>
