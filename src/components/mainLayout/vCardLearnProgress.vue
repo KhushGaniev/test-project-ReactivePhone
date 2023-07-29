@@ -8,7 +8,9 @@
           </div>
           <div :class="$style.column">
             <div :class="$style.text">
-              <h2 :class="$style.title">Learning</h2>
+              <h2 @click="$router.push('/test')" :class="$style.title">
+                Learning
+              </h2>
               <p :class="$style.subtitle">Category В</p>
             </div>
             <router-link to="/test" :class="$style.arrow">
@@ -53,6 +55,7 @@ export default {
   font-size: 20px;
   font-weight: 600;
   line-height: 26px;
+  cursor: pointer;
 }
 .subtitle {
   font-size: 14px;
