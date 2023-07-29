@@ -35,12 +35,14 @@ export default {
 .container {
   max-width: 360px;
   margin: 0 auto;
+  padding: 0px 15px;
 }
 .exit {
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
+  margin-left: 15px;
 }
 .exitText {
   margin-left: 15px;
