@@ -6,7 +6,8 @@
           v-for="item in goodsData"
           :key="item.id"
           :task="item.task"
-          :id="item.id"
+          :count="item.count"
+          @update:count="updateCount(item, $event)"
         />
       </div>
     </div>
@@ -26,6 +27,12 @@ export default {
     return {
       goodsData: data,
     };
+  },
+  methods: {
+    updateCount(item, newCount) {
+      // Обновляем значение count в массиве goodsData
+      item.count = newCount;
+    },
   },
 };
 </script>

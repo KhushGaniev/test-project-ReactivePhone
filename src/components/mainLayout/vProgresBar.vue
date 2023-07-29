@@ -2,7 +2,10 @@
   <div :class="$style.root">
     <div :class="$style.container">
       <div :class="$style.wrapper">
-        <h3 :class="$style.title">112 questions out of 730 passed</h3>
+        <h3 :class="$style.title">
+          {{ this.countQuestions }} questions out of
+          {{ this.dataQuestions.length }} passed
+        </h3>
         <div :class="$style.progress">
           <div
             v-for="index in numberOfBars"
@@ -16,12 +19,27 @@
 </template>
 
 <script>
+import data from "@/data/goods";
+
 export default {
   name: "vProgresBar",
   data() {
     return {
-      numberOfBars: 7, // Количество зеленых полосок
+      numberOfBars: 7,
+      dataQuestions: data,
     };
+  },
+  computed: {
+    //Считаю количество выполненных задач
+    countQuestions() {
+      const questions = this.dataQuestions.reduce((acc, el) => {
+        return acc + el.count;
+      }, 0);
+      return questions;
+    },
+  },
+  mounted() {
+    this.countQuestions;
   },
 };
 </script>

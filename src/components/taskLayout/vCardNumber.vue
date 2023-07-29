@@ -2,7 +2,7 @@
   <div :class="$style.root">
     <div :class="$style.container">
       <div :class="$style.wrapper" @click="toggleDone">
-        <div :class="$style.done" v-if="showDone">
+        <div :class="$style.done" v-if="count === 1">
           <img src="@/assets/images/done.svg" alt="done-icon" />
         </div>
         <p :class="$style.number">{{ task }}</p>
@@ -15,21 +15,16 @@
 export default {
   name: "vCardNumber",
   props: {
-    id: {
-      type: Number,
-    },
     task: {
       type: String,
     },
-  },
-  data() {
-    return {
-      showDone: false, // По умолчанию блок скрыт
-    };
+    count: {
+      type: Number,
+    },
   },
   methods: {
     toggleDone() {
-      this.showDone = !this.showDone; // Переключаем состояние блока при клике
+      this.$emit("update:count", this.count === 0 ? 1 : 0);
     },
   },
 };
