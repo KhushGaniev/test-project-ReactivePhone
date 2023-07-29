@@ -82,6 +82,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 8px 20px;
+  border-radius: 24px 24px 0px 0px;
+  background: #fff;
 }
 .text {
   margin-top: 12px;

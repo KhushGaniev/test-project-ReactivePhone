@@ -2,4 +2,4 @@
   <router-view />
 </template>
 
-<style src="@/assets/style/nullstyle.css"></style>
+<style src="@/assets/style/nullstyle.css" module></style>

@@ -25,8 +25,7 @@ export default {
 
 <style module>
 .root {
-  margin-top: 60px;
-  padding: 12px 0;
+  padding: 48px 0 8px 0;
 }
 .container {
   max-width: 360px;
