@@ -32,6 +32,7 @@ export default {
 <style module>
 .root {
   background: rgba(249, 249, 249, 1);
+  min-height: 100vh;
 }
 .container {
   max-width: 360px;

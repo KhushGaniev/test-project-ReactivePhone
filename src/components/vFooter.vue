@@ -76,7 +76,6 @@ export default {
 .container {
   max-width: 360px;
   margin: 0 auto;
-  padding: 0 16px;
 }
 .wrapper {
   display: flex;

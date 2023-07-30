@@ -30,6 +30,7 @@ export default {
 <style module>
 .root {
   background: rgba(249, 249, 249, 1);
+  min-height: 100vh;
   padding-top: 62px;
 }
 .container {
