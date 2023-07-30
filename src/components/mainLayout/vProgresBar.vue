@@ -3,14 +3,14 @@
     <div :class="$style.container">
       <div :class="$style.wrapper">
         <h3 :class="$style.title">
-          {{ this.countQuestions }} questions out of
-          {{ this.dataQuestions.length }} passed
+          {{ countQuestions }} questions out of
+          {{ dataQuestions.length }} passed
         </h3>
         <div :class="$style.progress">
           <div
-            v-for="index in numberOfBars"
-            :key="index"
-            :class="$style.progressStrip"
+            v-for="bar in numberOfBars"
+            :key="bar"
+            :class="[progressBarClass(bar)]"
           ></div>
         </div>
       </div>
@@ -22,7 +22,7 @@
 import data from "@/data/goods";
 
 export default {
-  name: "vProgresBar",
+  name: "vProgressBar",
   data() {
     return {
       numberOfBars: 7,
@@ -31,14 +31,26 @@ export default {
   },
   computed: {
     countQuestions() {
-      const questions = this.dataQuestions.reduce((acc, el) => {
+      return this.dataQuestions.reduce((acc, el) => {
         return acc + el.count;
       }, 0);
-      return questions;
+    },
+    percentageCompleted() {
+      return (this.countQuestions / this.dataQuestions.length) * 100;
+    },
+  },
+  methods: {
+    progressBarClass(barNumber) {
+      if (barNumber <= this.percentageCompleted / (100 / this.numberOfBars)) {
+        return this.$style.progressStrip;
+      } else {
+        return this.$style.progressStripNull;
+      }
     },
   },
   mounted() {
     this.countQuestions;
+    this.progressBarClass();
   },
 };
 </script>
@@ -64,6 +76,16 @@ export default {
 .progressStrip {
   height: 100%;
   background-color: #4caf50; /* Зеленый цвет */
+  display: inline-block; /* Отображаем полоски в ряд */
+  width: 30px; /* Ширина каждой полоски */
+  height: 6px; /* Высота каждой полоски */
+  border-radius: 5px; /* Закругление углов */
+  margin-right: 5px; /* Интервал между полосками */
+}
+.progressStripNull {
+  height: 100%;
+  opacity: 0.1;
+  background: var(--color-green, #52a754);
   display: inline-block; /* Отображаем полоски в ряд */
   width: 30px; /* Ширина каждой полоски */
   height: 6px; /* Высота каждой полоски */
