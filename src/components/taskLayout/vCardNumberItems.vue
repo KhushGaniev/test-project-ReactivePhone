@@ -25,13 +25,13 @@ export default {
   },
   data() {
     return {
-      goodsData: data,
+      goodsData: JSON.parse(localStorage.getItem("goodsData")) || data,
     };
   },
   methods: {
     updateCount(item, newCount) {
-      // Обновляем значение count в массиве goodsData
       item.count = newCount;
+      localStorage.setItem("goodsData", JSON.stringify(this.goodsData));
     },
   },
 };

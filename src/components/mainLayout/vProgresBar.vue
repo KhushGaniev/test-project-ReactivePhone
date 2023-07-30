@@ -26,11 +26,10 @@ export default {
   data() {
     return {
       numberOfBars: 7,
-      dataQuestions: data,
+      dataQuestions: JSON.parse(localStorage.getItem("goodsData")) || data,
     };
   },
   computed: {
-    //Считаю количество выполненных задач
     countQuestions() {
       const questions = this.dataQuestions.reduce((acc, el) => {
         return acc + el.count;
